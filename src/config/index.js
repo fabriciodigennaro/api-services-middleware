@@ -1,11 +1,18 @@
+const config = {
+    PORT: process.env.PORT || 3000,
+    APP_NAME: process.env.APP_NAME,   
+    WEATHER_API_KEY: process.env.WEATHER_API_KEY,
+    WEATHER_BASE_URL: process.env.WEATHER_BASE_URL,    
+    NEWS_API_KEY: process.env.NEWS_API_KEY,
+    NEWS_BASE_URL: process.env.NEWS_BASE_URL,
+    BITLY_TOKEN: process.env.BITLY_TOKEN,
+    BITLY_CREATE_SHORT_URL: process.env.BITLY_CREATE_SHORT_URL,
+};
 
-module.exports = {
-    PORT: process.env.PORT,
-    APP_NAME: process.env.APP_NAME,
-    DB_HOST: process.env.DB_HOST,
-    DB_PORT: process.env.DB_PORT,
-    DB_USER: process.env.DB_USER,
-    DB_PASSWORD: process.env.DB_PASSWORD,
-    DB_NAME: process.env.DB_NAME,
-    DB_DIALECT: process.env.DB_DIALECT
+for (const key in config) {
+    if (config[key] == undefined) {
+        throw new Error(`You need to set ${key} environment variable`);
+    }
 }
+
+module.exports = config;

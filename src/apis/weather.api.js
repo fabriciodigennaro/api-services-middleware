@@ -1,10 +1,11 @@
 const axios = require('axios');
+const config = require('../config');
 
 class WeatherAPI {
 
     getWeatherByCity = async (city, units = 'metric') => {
         try {
-            const URL = process.env.WEATHER_BASE_URL  + process.env.WEATHER_API_KEY + '&q=' + city + '&units=' + units;
+            const URL = config.WEATHER_BASE_URL  + config.WEATHER_API_KEY + '&q=' + city + '&units=' + units;
             let response = await axios.get(URL);
             return response.data;
         } catch (error) {

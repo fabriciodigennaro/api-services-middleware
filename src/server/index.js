@@ -1,5 +1,6 @@
 const express = require('express');
 const routers = require('../routes');
+const config = require('../config');
 
 const { ErrorMiddleware } = require("../middlewares");
 
@@ -24,8 +25,8 @@ class Server {
     }
 
     start = () => {
-        this._app.listen(process.env.PORT, () => {
-            console.log(`${process.env.APP_NAME} running on port ${process.env.PORT}`);
+        this._app.listen(config.PORT, () => {
+            console.log(`${config.APP_NAME} running on port ${config.PORT}`);
         })
     }
 
