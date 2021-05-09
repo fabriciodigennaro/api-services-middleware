@@ -7,7 +7,7 @@ class NewsService {
     }
 
     getNews = async (country, category) => {
-        return this._newsAPI.getNews(country, category);
+        return await this._newsAPI.getNews(country, category);
     }
 }
 

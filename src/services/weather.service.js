@@ -7,7 +7,7 @@ class WeatherService {
     }
 
     getWeather = async (city) => {
-        return this._weatherAPI.getWeatherByCity(city);
+        return await this._weatherAPI.getWeatherByCity(city);
     }
 }
 

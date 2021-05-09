@@ -10,9 +10,9 @@ $ cd api-services-middleware
 $ npm install
 ```
 
-Create a .env file using .env.example file as a guide (remember to include you own api keys!)
+Create a .env file using .env.example file as a guide (remember to include your own api keys!)
 
-After you have configured you .env file, you are set to run the application
+After you have configured your .env file, you are set to run the application
 
 ```bash
 $ npm run start:dev
