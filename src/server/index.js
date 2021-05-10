@@ -47,6 +47,7 @@ class Server {
         this._app.use("/bitly", this._routers.BitlyRoutes);
         this._app.use("/news", this._routers.NewsRoutes);
         this._app.use("/weather", this._routers.WeatherRoutes);
+        this._app.use("/pixabay", this._routers.PixabayRoutes);
     }
 };
 
