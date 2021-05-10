@@ -1,6 +1,7 @@
 const express = require('express');
 const routers = require('../routes');
 const config = require('../config');
+const cors = require('cors');
 
 const { ErrorMiddleware } = require("../middlewares");
 
@@ -34,6 +35,10 @@ class Server {
         console.log("Initializing middlewares...");
         this._app.use(express.urlencoded({ extended: false }));
         this._app.use(express.json());
+        const corsOptions = {
+            origin: config.CORS_ORIGIN
+        };
+        this._app.use(cors(corsOptions));
 
     }
 
