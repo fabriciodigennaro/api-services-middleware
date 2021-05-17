@@ -9,7 +9,11 @@ class NewsAPI {
             let response = await axios.get(URL);
             return response.data;
         } catch (error) {
-            console.error(error.message);
+            if(error.response.status >= 400 && error.response.status < 500) {
+                let newError =  new Error(error.response.data.message);
+                newError.status = error.response.status;
+                throw newError;
+            }
             throw new Error('Problem connecting with News API');
         }    
     }
