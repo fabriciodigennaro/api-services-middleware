@@ -8,7 +8,15 @@ class BitlyService {
     }
     
     createShortUrl = async (longUrl) => {
-        return await this._bitlyAPI.createShortUrl(longUrl);
+        const response = await this._bitlyAPI.createShortUrl(longUrl);
+        return this.buildShortUrlResponse(response);
+    }
+
+    buildShortUrlResponse = (response) => {
+        return {
+            long_url: response.long_url,
+            short_url: response.link,
+        }
     }
 
 };

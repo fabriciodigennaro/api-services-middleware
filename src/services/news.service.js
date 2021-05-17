@@ -7,7 +7,23 @@ class NewsService {
     }
 
     getNews = async (country, category) => {
-        return await this._newsAPI.getNews(country, category);
+        const response = await this._newsAPI.getNews(country, category);
+        return this.buildNewsResponse(response);
+    }
+
+    buildNewsResponse = (response) => {
+        return {
+            total_results: response.totalResults,
+            articles: response.articles.map(article => {
+                return {
+                    image: article.urlToImage,
+                    source_name: article.source.name,
+                    title: article.title, 
+                    description: article.description, 
+                    url: article.url,
+                }
+            })
+        };
     }
 }
 
