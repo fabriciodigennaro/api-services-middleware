@@ -11,8 +11,9 @@ class PixabayAPI {
             let response = await axios.get(URL);
             return response.data;
         } catch (error) {
+            console.log(error);
             if(error.response.status >= 400 && error.response.status < 500) {
-                let newError =  new Error(error.response.data.message);
+                let newError =  new Error(error.response.data);
                 newError.status = error.response.status;
                 throw newError;
             }
