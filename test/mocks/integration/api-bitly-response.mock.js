@@ -1,9 +1,9 @@
-const responseOk = {
+const apiResponseOk = {
     "created_at": "2021-05-06T15:20:52+0000",
     "id": "bit.ly/3usiGLP",
-    "link": "https://bit.ly/3usiGLP",
+    "link": "https://bit.ly/2QCiUBv",
     "custom_bitlinks": [],
-    "long_url": "https://flaviocopes.com/axios-send-authorization-header/",
+    "long_url": "http://www.google.com/",
     "archived": false,
     "tags": [],
     "deeplinks": [],
@@ -12,7 +12,7 @@ const responseOk = {
     }
 };
 
-const responseIncomplete = {
+const apiResponseIncomplete = {
     "created_at": "2021-05-06T15:20:52+0000",
     "id": "bit.ly/3usiGLP",
     // "link": "https://bit.ly/3usiGLP",
@@ -26,20 +26,13 @@ const responseIncomplete = {
     }
 };
 
-const notFoundResponse = {
-    "message": "INVALID_ARG_LONG_URL",
-    "resource": "bitlinks",
-    "description": "The value provided is invalid.",
-    "errors": [
-        {
-            "field": "long_url",
-            "error_code": "invalid"
-        }
-    ]
-};
+const apiNotFoundResponse = {
+        "status": 400,
+        "message": "Please insert a valid URL"
+    };
 
 module.exports = {
-    responseOk,
-    responseIncomplete,
-    notFoundResponse
+    apiResponseOk,
+    apiResponseIncomplete,
+    apiNotFoundResponse
 }

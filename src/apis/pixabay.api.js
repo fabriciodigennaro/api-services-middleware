@@ -6,7 +6,7 @@ class PixabayAPI {
 
     getImages = async (param, imagesPerPage, actualPage) => {
         try {
-            const URL = config.PIXABAY_BASE_URL + config.PIXABAY_API_KEY + '&q=' + param + 
+            const URL = config.PIXABAY_BASE_URL + '/api/?key=' + config.PIXABAY_API_KEY + '&q=' + param + 
                         '&per_page=' + imagesPerPage + '&page=' + actualPage;
             let response = await axios.get(URL);
             return response.data;

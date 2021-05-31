@@ -1,6 +1,6 @@
-const responseOk = {
-        "total": 2,
-        "totalHits": 2,
+const apiResponseOk = {
+        "total": 1,
+        "totalHits": 1,
         "hits": [
             {
                 "id": 1712628,
@@ -26,34 +26,10 @@ const responseOk = {
                 "user": "alexis0612",
                 "userImageURL": "https://cdn.pixabay.com/user/2016/10/03/19-49-08-914_250x250.jpg"
             },
-            {
-                "id": 3232967,
-                "pageURL": "https://pixabay.com/vectors/diego-maradona-football-maradona-3232967/",
-                "type": "vector/svg",
-                "tags": "diego maradona, football, maradona",
-                "previewURL": "https://cdn.pixabay.com/photo/2018/03/17/01/29/diego-maradona-3232967_150.png",
-                "previewWidth": 144,
-                "previewHeight": 150,
-                "webformatURL": "https://pixabay.com/get/gdf6b3396aa173eec33a1097f3bf660da1d0b26552b5072c82ff53ac097ec4739b48d20d40da058a05ead25ededdab153a09a8813467c203e3ed06603c7e53775_640.png",
-                "webformatWidth": 613,
-                "webformatHeight": 640,
-                "largeImageURL": "https://pixabay.com/get/gf2649cb5a29a2247184203f74a0a680e09cbbedca1bbc7ccdbe14a85a507e6dc5d16f6e6baf54e0fddf9835671ceb308fc953779e9851f25e35172fdebf9975c_1280.png",
-                "imageWidth": 1837,
-                "imageHeight": 1920,
-                "imageSize": 193290,
-                "views": 3913,
-                "downloads": 3301,
-                "favorites": 7,
-                "likes": 13,
-                "comments": 1,
-                "user_id": 7541814,
-                "user": "paasadani",
-                "userImageURL": "https://cdn.pixabay.com/user/2019/02/20/22-41-18-956_250x250.jpg"
-            }
         ]
     };
 
-const responseIncomplete = {
+const apiResponseIncomplete = {
     "total": 2,
     "totalHits": 2,
     "hits": [
@@ -109,14 +85,13 @@ const responseIncomplete = {
   
 };
 
-const notFoundResponse = {
-    "total": 0,
-    "totalHits": 0,
-    "hits": []
+const apiNotFoundResponse = {
+    "cod": "404",
+    "message": "Not found"
 };
 
 module.exports = {
-    responseOk,
-    responseIncomplete,
-    notFoundResponse
+    apiResponseOk,
+    apiResponseIncomplete,
+    apiNotFoundResponse
 }
