@@ -3,4 +3,5 @@ module.exports = {
     NewsService: require('./news.service'),
     WeatherService: require('./weather.service'),
     PixabayService: require('./pixabay.service'),
+    HealthService: require('./health.service'),
 }

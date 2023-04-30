@@ -60,6 +60,7 @@ class Server {
         this._app.use("/news", this._routers.NewsRoutes);
         this._app.use("/weather", this._routers.WeatherRoutes);
         this._app.use("/pixabay", this._routers.PixabayRoutes);
+        this._app.use("/health", this._routers.HealthRoutes);
 
         // Swagger UI
         const options = {
